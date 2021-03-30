@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>用户指定月份天数输出</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			输入月份，显示相应天数：<br>
+			<input type="" name="" id="" value="" v-model="month"/>
+			<li v-if="month==2">28天</li>
+			<li v-if="month==4||month==6||month==9||month==11">30天</li>
+			<li v-if="month==1||month==3||month==5||month==7||month==8||month==10||month==12">31天</li>
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					month:'',
+				}
+			})
+		</script>
+	</body>
+</html>
