@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p v-for="school in schools">
+				{{school.name}}
+			</p>
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					schools:[
+						{name:'广西科技师范学院',location:'来宾'},
+						{name:'广西大学',location:'南宁'},
+						{name:'广西师范大学',location:'南宁'},
+						{name:'南宁师范大学',location:'南宁'}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

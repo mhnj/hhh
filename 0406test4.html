@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input v-model="number" type="text" name="" id="" value="" />
+			<p v-if="number==codes[0].num">你输入的国家代码是+{{codes[0].num}},他表示{{codes[0].nation}}，首都为{{codes[0].capital}}</p>
+			<p v-if="number==codes[1].num">你输入的国家代码是+{{codes[1].num}},他表示{{codes[1].nation}}，首都为{{codes[1].capital}}</p>
+			<p v-if="number==codes[2].num">你输入的国家代码是+{{codes[2].num}},他表示{{codes[2].nation}}，首都为{{codes[2].capital}}</p>
+			
+		</div>
+
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					number:'',
+					codes:[
+						{num:'86',nation:'中国',capital:'北京'},
+						{num:'1',nation:'美国',capital:'华盛顿'},
+						{num:'44',nation:'英国',capital:'伦敦'},
+					]
+					
+				}
+			})
+		</script>
+	</body>
+</html>
