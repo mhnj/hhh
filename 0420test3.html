@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			<img src="./img/2.gif" @click="show()">
+			请点击大象的眼睛
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				methods:{
+					show(){
+						// console.log("x,y="+event.clientX+","+event.clientY);
+						if(event.clientX>89&&event.clientX<96&&event.clientY>33&&event.clientY<38){
+							alert("恭喜，验证成功！")
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
