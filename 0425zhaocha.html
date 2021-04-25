@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<img src="./img/2.jpg" @click="myFunction()">
+			<b>请找出图上五处不同。</b>
+			<br />
+			已找出 {{number}} 处不同，获得 {{number}} 分
+			
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					number:0,
+					f1:0,
+					f2:0,
+					f3:0,
+					f4:0,
+					f5:0,
+				},
+				methods:{
+					myFunction(){
+						
+						console.log("x,y="+event.clientX+","+event.clientY);
+						//月亮
+						
+						if(event.clientX>29&&event.clientX<83&&event.clientY>76&&event.clientY<128
+						||event.clientX>174&&event.clientX<327&&event.clientY>76&&event.clientY<128){
+							if(v.f1==0){
+							v.number++;
+							}
+							v.f1++
+						}
+						
+						//灯笼
+						if(event.clientX>128&&event.clientX<180&&event.clientY>28&&event.clientY<56
+						||event.clientX>368&&event.clientX<420&&event.clientY>28&&event.clientY<56){
+							if(v.f2==0){
+							v.number++;
+							}
+							v.f2++
+						}
+						//围裙
+						if(event.clientX>153&&event.clientX<168&&event.clientY>165&&event.clientY<177
+						||event.clientX>397&&event.clientX<412&&event.clientY>165&&event.clientY<177){
+							if(v.f3==0){
+							v.number++;
+							}
+							v.f3++
+						}
+						//桌上蛋糕
+						if(event.clientX>112&&event.clientX<163&&event.clientY>197&&event.clientY<221
+						||event.clientX>357&&event.clientX<405&&event.clientY>197&&event.clientY<221){
+							if(v.f4==0){
+							v.number++;
+							}
+							v.f4++
+						}
+						//手上茶壶
+						if(event.clientX>169&&event.clientX<198&&event.clientY>120&&event.clientY<137
+						||event.clientX>418&&event.clientX<441&&event.clientY>120&&event.clientY<137){
+							if(v.f5==0){
+							v.number++;
+							}
+							v.f5++
+						}
+						
+						if(v.number==5){
+							alert("恭喜！成功通关！")
+							
+						}
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
