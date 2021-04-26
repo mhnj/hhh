@@ -11,6 +11,8 @@
 			<b>请找出图上五处不同。</b>
 			<br />
 			已找出 {{number}} 处不同，获得 {{number}} 分
+			<br>
+			<h3 v-if="number==5">你已找出所有不同，恭喜过关！</h3>
 			
 		</div>
 		<script type="text/javascript">
@@ -71,10 +73,7 @@
 							v.f5++
 						}
 						
-						if(v.number==5){
-							alert("恭喜！成功通关！")
-							
-						}
+						
 						
 					}
 				}
