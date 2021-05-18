@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- canvas api mozilla -->
+		<!-- https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes -->
+		<canvas id="myCanvas" width="" height=""></canvas>
+		
+		<div id="app">
+			<input type="button" @click="show()" name="" id="" value="点机绘制" />
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				methods:{
+					show(){
+						let canvas=document.getElementById("myCanvas");
+						let context=canvas.getContext("2d");
+						context.fillRect(25, 25, 100, 100);
+						context.clearRect(45, 45, 60, 60);
+						context.strokeRect(50, 50, 50, 50);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
