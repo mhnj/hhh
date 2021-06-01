@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="800" height="600"></canvas>
+		<div id="app">
+			输入图中的字母跳到对应的荷叶上
+			<br>
+			<input type="text" @click="show()" @keyup="show()" v-model="userString" name="" id="" value="" />
+			<br>
+			跳跃次数：{{count}}
+			<br>
+			你的分数：{{count}}
+			<br>
+			{{info}}
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					userString:"",
+					count:"",
+					info:""
+				},
+				methods:{
+					show(){
+						console.log(this.userString);
+						// 加载背景
+						let canvas=document.getElementById("myCanvas");
+						let context= canvas.getContext("2d");
+						 let img_background=new Image();
+						 img_background.src="./img/qwbackground.gif";
+						 img_background.onload=function(){
+							 context.drawImage(img_background,0,0);
+						 }
+						 
+						 // 显示青蛙
+						 let img_frog=new Image();
+						 img_frog.src="./img/frog.gif";
+						 img_frog.onload=function(){
+						 	 context.drawImage(img_frog,400,400);
+						 }
+						 
+						 // 条件判断
+						 if(this.userString=="hello"){
+							 this.userString="";
+							 img_frog.onload=function(){
+							 	 context.drawImage(img_frog,200,250);
+							 }
+							 v.count++;
+						 }
+						 //
+						 if(this.userString=="world"){
+						 	this.userString="";
+						 	img_frog.onload=function(){
+								context.drawImage(img_frog,400,180);
+						 	}
+							v.count++;
+						 }
+						 //
+						 if(this.userString=="hi"){
+						 	this.userString="";
+						 	img_frog.onload=function(){
+						 		context.drawImage(img_frog,340,80);
+						 	}
+							v.count++;
+						 }
+						 
+						 //
+						 if(v.count==3){
+							 v.info="恭喜你顺利通关！"
+						 }
+						 
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
